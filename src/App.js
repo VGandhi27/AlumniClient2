@@ -1,10 +1,12 @@
 import React from 'react'
 import './App.css'
-import Lookup from './components/Lookup'
+import Signup from './components/Signup'
+// import Lookup from './components/Lookup'
+
 const App = () => {
   return (
     <div>
-      <Lookup/>
+      <Signup/>
     </div>
   )
 }

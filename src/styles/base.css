@@ -14,10 +14,16 @@
     text-align: left;
     margin: auto;
     padding: 0.5rem;
-    max-width: 300px;
+    max-width: 400px;
 }
 .brief .left h1{
-    font-size: 3rem;
+    font-size: 3.2rem;
+    text-align: center;
+    align-items: justify-content;
+    style : italics;
+    padding: 2px 0;
+    margin-top: 2px 2px; 
+    margin-bottom : 2px;
 }
 .brief .left h2{
     font-size: 2rem;
@@ -34,6 +40,7 @@ button span{
 .brief .right{
     max-width: 700px;
     max-height : 80%;
+    margin-top : 2rem;
     
 }
 .brief button{
@@ -76,7 +83,7 @@ button .toeng {
    
     margin: 2rem 10%;
     border: 1px solid #333;
-    border-radius:25%;
+    border-radius:2%;
     text-align: center;
     align-items: center;
     max-width: 80%;
@@ -102,12 +109,24 @@ button .toeng {
         display: none;
     
     }
-    .brief .left p{
-        font-size: 1.5rem;
-       
-    }
+    
     .brief .left h1{
         font-size: 3rem;
     }
+
+}
+@media screen and (max-width:1200px){
+    .top img{
+        width: 70%;
+        height:80%;
+       
+    }}
+@media screen and (max-width:900px){
+    .top img{
+        width: 60%;
+        height:80%;
+       
+    }
+   
 
 }
