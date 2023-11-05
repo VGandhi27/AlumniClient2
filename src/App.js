@@ -1,11 +1,12 @@
-import './App.css';
-
-function App() {
+import React from 'react'
+import './App.css'
+import Lookup from './components/Lookup'
+const App = () => {
   return (
-    <div className="App">
-     Hello Sweetie
+    <div>
+      <Lookup/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
