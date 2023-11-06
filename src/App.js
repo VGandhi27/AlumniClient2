@@ -1,14 +1,22 @@
-import React from 'react'
-import './App.css'
-import Signup from './components/Signup'
-// import Lookup from './components/Lookup'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./routes/SignIn";
+import SignUp from "./routes/SignUp";
+import ForgotPassword from "./routes/ForgotPassword";
+import Nopage from "./routes/Nopage";
 
-const App = () => {
+
+export default function App() {
   return (
-    <div>
-      <Signup/>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignUp />}/>
+          <Route index element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="forgotpassword" element={<ForgotPassword />} />
+          <Route path="*" element={<Nopage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App

@@ -11,18 +11,17 @@ const Signup = () => {
      <div className="brief">
       <div className="left ">
       <h1 >Alumni Network</h1>
-      <h2>Create a new Account</h2>
+      <h2>Log in to your Account</h2>
       <div className="form">
         <form >
         
-            <input placeholder = " Name " type="text" />
 
             <input type="email" placeholder= "Email" id="email" name="email"/>
             <input type="password" placeholder= "Password" id="password" name="password"/>
-            <input type="password" placeholder= "Confirm Password" id="conpassword" name="conpassword"/>
 
-             <button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> SignUp </button>
-             <label htmlFor="">Already a User</label>
+             <button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> Login </button>
+             <label htmlFor="">Forget Your Password ??</label>
+             <label htmlFor="">Don't have an Account??</label>
              <label htmlFor="">Get the app</label>
              <img src={Geton} style={{padding:"10px"}}></img>
 
