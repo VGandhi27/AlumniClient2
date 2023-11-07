@@ -52,7 +52,18 @@ list-style-type: none;
   background: blue;
   color: #fff;
 }
-
+.btn-red{
+  /* background: rgba(255, 255, 255, 0.2); */
+  padding: 12px 32px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: rgb(248, 217, 15);
+  border: 1px solid #fff;
+  font-weight: 600;
+  cursor: pointer;
+  background: red;
+  color: #fff;
+}
 .btn:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;

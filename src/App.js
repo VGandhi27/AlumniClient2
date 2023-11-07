@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./routes/SignIn";
 import SignUp from "./routes/SignUp";
 import ForgotPassword from "./routes/ForgotPassword";
+import Dashboard from "./routes/Dashboard";
+
 import Nopage from "./routes/Nopage";
 
 
@@ -15,6 +17,7 @@ export default function App() {
           <Route path="signin" element={<SignIn />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="forgotpassword" element={<ForgotPassword />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<Nopage />} />
       </Routes>
     </BrowserRouter>
