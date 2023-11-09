@@ -10,7 +10,7 @@ const CreatePost = () => {
     const [url,setUrl] = useState("")
     useEffect(()=>{
        if(url){
-        fetch("/createpost",{
+        fetch("https://super-bassoon-495qjjvxq5q3qgq5-5000.app.github.dev/api/auth/createpost",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
