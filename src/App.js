@@ -4,9 +4,9 @@ import SignIn from "./routes/SignIn";
 import SignUp from "./routes/SignUp";
 import ForgotPassword from "./routes/ForgotPassword";
 import Dashboard from "./routes/Dashboard";
-
+import CreatePost from './routes/CreatePost';
 import Nopage from "./routes/Nopage";
-
+import Profile from "./routes/Profile"
 
 export default function App() {
   return (
@@ -18,6 +18,8 @@ export default function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="forgotpassword" element={<ForgotPassword />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="createpost" element ={<CreatePost/>}/>
+          <Route path="profile" element ={<Profile/>}/>
           <Route path="*" element={<Nopage />} />
       </Routes>
     </BrowserRouter>

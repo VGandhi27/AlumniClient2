@@ -92,7 +92,7 @@ class Sidenav extends Component {
         <div id="mySidenav" style={{ ...sidenavStyle, width: this.state.sidenavWidth }}>
           <a href="javascript:void(0)" className="closebtn" style={closeBtnStyle} onClick={this.closeNav}>&times;</a>
           <div>
-            <Link to="/about" style={sidenavLinkStyle}><FaUser /> Profile</Link>
+            <Link to="/profile" style={sidenavLinkStyle}><FaUser /> Profile</Link>
             <Link to="/services" style={sidenavLinkStyle}><FaUser /> Updated Profile</Link>
             <Link to="/services" style={sidenavLinkStyle}><FaBriefcase /> Career Center</Link>
             <Link to="/services" style={sidenavLinkStyle}><FaUser /> People</Link>
@@ -100,18 +100,16 @@ class Sidenav extends Component {
             <div style={dropdownStyle}>
               <div style={{ ...sidenavLinkStyle, cursor: 'pointer' }} onClick={this.toggleDropdown}><FaCaretDown /> Post</div>
               <div id="dropdown-content" style={{ ...dropdownContentStyle, display: this.state.dropdownOpen ? 'block' : 'none' }}>
-                <Link to="/job" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaBriefcase /> Job</Link>
-                <Link to="/discussion" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaComment /> Discussion</Link>
-                <Link to="/internship" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaUserGraduate /> Internship</Link>
+                <Link to="/createPost" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaBriefcase /> Job</Link>
+                <Link to="/createPost" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaComment /> Discussion</Link>
+                <Link to="/createPost" style={{ ...dropdownTitleStyle, transition: '0.3s' }}><FaUserGraduate /> Internship</Link>
               </div>
             </div>
             <Link to="/contact" style={sidenavLinkStyle}><FaUser /> Contact</Link>
           </div>
         </div>
 
-        <h2>Alumni Network</h2>
-        <p>Click on the element below to open the side navigation menu.</p>
-       <h1><span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={this.openNav}>&#9776; Features</span>
+               <h1><span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={this.openNav}>&#9776; Features</span>
        </h1> 
       </div>
     );

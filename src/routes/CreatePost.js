@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import FixedNav from '../components/FixedNav';
-import Profile from '../components/Profile';
+import CreatePost from '../components/CreatePost'
 const Dashboard = () => {
   return (
     <>
      <FixedNav/>
      <Navbar/> 
      
-     <Profile/>
+     <CreatePost/>
 
     </>
   )
