@@ -69,11 +69,11 @@ list-style-type: none;
   color: #fff;
   transition: 0.3s;
 }
-a{
+/* a{
   color: black !important;
-}
+} */
 
-.brand-logo,h2{
+.brand-logo{
   font-family: 'Grand Hotel', cursive;
 }
 .mycard{

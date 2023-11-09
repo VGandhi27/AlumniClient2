@@ -2,6 +2,7 @@ import "../styles/base.css";
 import React from 'react'
 import StudGath from '../assets/_Students1.png'
 import Geton from '../assets/geton.png'
+import { Link } from "react-router-dom";
 // import { BsPersonFill } from 'react-icons/bs';
 const Signup = () => {
   return (
@@ -19,9 +20,9 @@ const Signup = () => {
             <input type="email" placeholder= "Email" id="email" name="email"/>
             <input type="password" placeholder= "Password" id="password" name="password"/>
 
-             <button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> Login </button>
-             <label htmlFor="">Forget Your Password ??</label>
-             <label htmlFor="">Don't have an Account??</label>
+             <Link to ="/dashboard" ><button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> Login </button></Link>
+            <Link to="/forgotpassword"> <label htmlFor="">Forget Your Password ??</label></Link>
+            <Link to="/signup"> <label htmlFor="">Don't have an Account??</label></Link>
              <label htmlFor="">Get the app</label>
              <img src={Geton} style={{padding:"10px"}}></img>
 

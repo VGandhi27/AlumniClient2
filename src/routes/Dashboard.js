@@ -7,10 +7,16 @@ const Dashboard = () => {
     <>
      <FixedNav/>
      <Navbar/> 
-     
-     <Profile/>
+     <div style={{maxWidth:"500px", margin:"0px auto" }}>
+     <div  style={{
+      display:"flex",
+      justifyContent:"space-around",
+      margin:"20px 0px",
 
-    </>
+    }}className="progress">Loading
+      <div className="indeterminate">  </div>
+  </div></div>
+  </>
   )
 }
 

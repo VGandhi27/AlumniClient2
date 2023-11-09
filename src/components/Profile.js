@@ -4,13 +4,14 @@ const Profile = () => {
   return (
     <div>
       <div style={{maxWidth:"1000px", margin:"0px auto" }}>
-    <div style={{
+    <div 
+    style={{
       display:"flex",
       justifyContent:"space-around",
       margin:"20px 0px",
-      borderBottom:"1px solid grey"
 
-    }}>
+    }}
+    >
       <div>
         <img  alt="" style={{width:"160px",height:'160px',borderRadius:"80px"}}
         src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />

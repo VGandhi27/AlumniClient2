@@ -2,6 +2,7 @@ import "../styles/base.css";
 import React from 'react'
 import StudGath from '../assets/_Students1.png'
 import Geton from '../assets/geton.png'
+import { Link } from "react-router-dom";
 // import { BsPersonFill } from 'react-icons/bs';
 const Signup = () => {
   return (

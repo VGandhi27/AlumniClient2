@@ -93,10 +93,10 @@ class Sidenav extends Component {
           <a href="javascript:void(0)" className="closebtn" style={closeBtnStyle} onClick={this.closeNav}>&times;</a>
           <div>
             <Link to="/profile" style={sidenavLinkStyle}><FaUser /> Profile</Link>
-            <Link to="/services" style={sidenavLinkStyle}><FaUser /> Updated Profile</Link>
-            <Link to="/services" style={sidenavLinkStyle}><FaBriefcase /> Career Center</Link>
-            <Link to="/services" style={sidenavLinkStyle}><FaUser /> People</Link>
-            <Link to="/services" style={sidenavLinkStyle}><FaUsers /> Create Group</Link>
+            <Link to="/updateprofile" style={sidenavLinkStyle}><FaUser /> Updated Profile</Link>
+            <Link to="/careercenter" style={sidenavLinkStyle}><FaBriefcase /> Career Center</Link>
+            <Link to="/people" style={sidenavLinkStyle}><FaUser /> People</Link>
+            <Link to="/creategroup" style={sidenavLinkStyle}><FaUsers /> Create Group</Link>
             <div style={dropdownStyle}>
               <div style={{ ...sidenavLinkStyle, cursor: 'pointer' }} onClick={this.toggleDropdown}><FaCaretDown /> Post</div>
               <div id="dropdown-content" style={{ ...dropdownContentStyle, display: this.state.dropdownOpen ? 'block' : 'none' }}>
