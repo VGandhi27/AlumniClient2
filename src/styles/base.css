@@ -322,4 +322,11 @@ body {
   .search-button:focus {
     outline: none;
   }
+  ::placeholder {
+    color: white;
+    opacity: 3; 
+  }
   
+  ::-ms-input-placeholder { 
+    color: white;
+  }

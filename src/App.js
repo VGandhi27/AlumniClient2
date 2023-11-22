@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./routes/SignIn";
 import SignUp from "./routes/SignUp";
+import NoteState from "./context/notes/NoteState";
 import ForgotPassword from "./routes/ForgotPassword";
 import Dashboard from "./routes/Dashboard";
 import CreatePost from './routes/CreatePost';
@@ -9,7 +10,9 @@ import Nopage from "./routes/Nopage";
 import Profile from "./routes/Profile"
 import People from "./routes/People";
 import Alert from "./components/Alert";
-import CareerCenter from "./routes/CareerCenter"
+import CareerCenter from "./routes/CareerCenter";
+import Lookup from "./components/Lookup";
+
 
 export default function App() {
   const [alert, setAlert] = useState(null);
@@ -23,6 +26,8 @@ export default function App() {
     }, 1500);
 }
   return (
+    <NoteState>
+   
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<><Alert alert={alert}/><SignUp  showAlert={showAlert} /></>}/>
@@ -35,8 +40,9 @@ export default function App() {
           <Route path="profile" element ={<Profile/>}/>
           <Route path="people" element ={<People/>}/>
           <Route path="careercenter" element ={<CareerCenter/>}/>
+          <Route path="lookup" element ={<Lookup/>}/>      
           <Route path="*" element={<Nopage />} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter></NoteState>
   );
 }

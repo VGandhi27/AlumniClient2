@@ -12,7 +12,7 @@ let navigate =useNavigate();
   const handleSubmit =async(e)=>{
     e.preventDefault(); 
    
-    const response = await fetch(`https://super-bassoon-495qjjvxq5q3qgq5-5000.app.github.dev/api/auth/login`, {
+    const response = await fetch(`http://localhost:5000/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,13 +52,13 @@ let navigate =useNavigate();
         <form onSubmit={handleSubmit} >
         
 
-            <input type="email" placeholder= "Email" id="email" name="email" value={credentials.email}  onChange={onChange}/>
+            <input type="email" placeholder= "Email" id="email" name="email" value={credentials.email} style={{color:"white"}} onChange={onChange}/>
             <input type="password" placeholder= "Password" id="password" name="password" value={credentials.password} onChange={onChange}/>
 
              <Link to ="/dashboard" ><button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> Login </button></Link>
-            <Link to="/forgotpassword"> <label htmlFor="">Forget Your Password ??</label></Link>
-            <Link to="/signup"> <label htmlFor="">Don't have an Account??</label></Link>
-             <label htmlFor="">Get the app</label>
+           <label htmlFor=""> <Link to="/forgotpassword"> Forget Your Password ??</Link></label>
+             <label htmlFor=""><Link to="/signup">Don't have an Account??</Link></label>
+             <label htmlFor=""><Link to="/"></Link>Get the app</label>
              <img src={Geton} style={{padding:"10px"}}></img>
 
         </form>

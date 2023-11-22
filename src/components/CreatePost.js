@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react'
-import noteContext from "../context/notes/NoteState";
-// import M from 'materialize-css'
+import noteContext from "../context/notes/noteContext";
+import M from 'materialize-css'
 // import {useNavigate} from 'react-router-dom'
 // import Img2 from '../assets/Alumni Students 0 (2).png'
 const CreatePost = (props) => {
@@ -65,10 +65,9 @@ const { addNote}=context;
 const [note, setNote] = useState({title :"", description:"", tag:""})
 const handleClick=(e)=>{
  e.preventDefault();
- addNote(note.title,note.description,note.description);
+ addNote(note.title,note.description);
  setNote({title :"", description:"", tag:""})
- props.showAlert("Added Successfully", "success")
-
+ M.toast({html: 'Added Successfully', classes:"#43a047 green darken-1"})
 }
 const onChange=(e)=>{
     setNote({...note,[e.target.name]:e.target.value })
@@ -88,18 +87,23 @@ const onChange=(e)=>{
             id="title" name="title" value={note.title}
             onChange={onChange}
             />
+            <input 
+           type="text"
+            placeholder="title"
+            id="description" name="description" value={note.description}onChange={onChange}
+            />
            <input
             type="text"
-             placeholder="body"
-             name="description" value={note.description}
-            onChange={onchange}
+             placeholder="description"
+             name="description" value={note.description}id="description"
+            onChange={onchange}  minLength={5} required
              />
            <div className="file-field input-field">
             <div className="btn #64b5f6 blue darken-1">
                 <span>Upload Image</span>
                 <input type="file" multiple
-                value={note.tag}
-                id="tag" onChange={onChange} 
+                // value={note.tag}
+                // id="tag" onChange={onChange} 
                 />
             </div>
             <div className="file-path-wrapper">
@@ -120,3 +124,80 @@ const onChange=(e)=>{
 
 
 export default CreatePost
+
+
+
+// import React, { useState } from 'react'
+// import noteContext from "../context/notes/noteContext";
+// import { useContext } from 'react';
+// import Notes from './Notes';
+// import M from 'materialize-css';
+
+// const AddNote=(props)=> {
+//     const context=useContext(noteContext);
+//     const { addNote}=context;
+
+
+//     const [note, setNote] = useState({title :"", description:"", tag:""})
+//     const handleClick=(e)=>{
+//      e.preventDefault();
+//      addNote(note.title,note.description,note.description);
+//      setNote({title :"", description:"", tag:""})
+//      M.toast({html: 'Added Successfully', classes:"#43a047 green darken-1"})
+
+//     }
+//     const onChange=(e)=>{
+//         setNote({...note,[e.target.name]:e.target.value })
+//     }
+//   return (
+//     <>
+//      {/* Add a Note */}
+//      <div className="container my-3">
+//      <h2>Add a Note</h2>
+
+//     {/* Form for entry */}
+//      <form className="my-3">
+//        <div className="mb-3">
+//          <label htmlFor="title" className="form-label">
+//           Title
+//          </label>
+//          <input
+//            type="text"
+//            className="form-control"
+//            id="title" name="title" value={note.title}
+//            aria-describedby="emailHelp" onChange={onChange}  minLength={5} required
+//          />
+         
+//        </div>
+//        <div className="mb-3">
+//          <label htmlFor="description" className="form-label">
+//          Description
+//          </label>
+//          <input
+//            type="textarea"
+//            className="form-control" name="description" value={note.description}
+//            id="exampleInputPassword1" onChange={onChange}  minLength={5} required
+//          />
+//        </div>
+//        <div className="mb-3">
+//          <label htmlFor="tag" className="form-label">
+//         Tag
+//          </label>
+//          <input
+//            type="text"
+//            className="form-control" name="tag" value={note.tag}
+//            id="tag" onChange={onChange}  minLength={5} required
+//          />
+//        </div>
+      
+//        <button disabled={note.title.length<5||note.description.length<5} type="submit" className="btn btn-primary" onClick={handleClick}>
+//         Add Note
+//        </button>
+//      </form>
+//    </div>
+// </>
+    
+//   )
+// }
+
+// export default AddNote

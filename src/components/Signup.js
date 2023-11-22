@@ -14,7 +14,7 @@ const Signup = (props) => {
       const {name,email,password,cpassword}=credentials;
       e.preventDefault(); 
      
-      const response = await fetch(`https://super-bassoon-495qjjvxq5q3qgq5-5000.app.github.dev/api/auth/createuser`, {
+      const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,8 +58,8 @@ const Signup = (props) => {
             <input type="password" placeholder= "Confirm Password" id='cpassword' name='cpassword' onChange={onChange} minLength={5} required/>
 
              <button className=" btn-blue"  type="submit" style={{Background:"Blue"}}> SignUp </button>
-             <label htmlFor="">Already a User</label>
-             <label htmlFor="">Get the app</label>
+            <label htmlFor=""><Link to="/signin">Already a User</Link> </label>
+             <label htmlFor=""> <Link to ="/"></Link> Get the app</label>
              <img src={Geton} style={{padding:"10px"}}></img>
 
         </form>
