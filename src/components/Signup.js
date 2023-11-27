@@ -27,7 +27,7 @@ const Signup = (props) => {
       if(json.success){
         //save auth token and redirect
         localStorage.setItem('token',json.autoken);
-        navigate("/lookup");
+        navigate("/dashboard");
         // props.showAlert('Successfully SignUp','success')
         M.toast({html: 'Successfully SignUp', classes:"#43a047 green darken-1"})
       }

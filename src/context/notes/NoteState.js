@@ -21,6 +21,21 @@ const NoteState = (props) => {
     setNotes(json)
   }
 
+  // Get my Notes
+  const getmyNotes = async () => {
+    // API Call 
+    const response = await fetch(`${host}/api/notes/myallnotes`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": localStorage.getItem('token')
+      }
+    });
+    const json = await response.json()
+    console.log(json)
+    setNotes(json)
+  }
+
   // Add a Note
   const addNote = async (title, description, tag) => {
     // TODO: API Call
@@ -91,6 +106,7 @@ const note=await response.json();
         deleteNote,
         editNote,
         getNotes,
+        getmyNotes
       }}
     >
       {props.children}

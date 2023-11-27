@@ -1,6 +1,7 @@
 import React from 'react'
 import M from 'materialize-css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const CareerCenter = () => {
     useEffect(() => {
@@ -25,8 +26,8 @@ const CareerCenter = () => {
        <h5 style={{color:"black"}} >Career Support Center</h5> 
         </div>
       <div className="collapsible-body" style={{background:"white"}}><span> <h3 style ={{justifyContent : "center ",textAlign:"center"}}>0 Members</h3>
-      <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
-      <button className=" btn-blue"  type="submit" style={{Background:"Blue", margin:"20px",justifyContent : "center ",textAlign:"center"}}> Write a post </button>
+   <Link to="/createPost"> <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
+      <button className=" btn-blue"  type="submit" style={{Background:"Blue", margin:"20px",justifyContent : "center ",textAlign:"center"}}> Write a post </button></Link>  
 
 
        </span></div>
@@ -36,9 +37,9 @@ const CareerCenter = () => {
         {/* <i className="material-icons">place</i> */}
         <h5 style={{color:"black"}} > Entrepreneurship</h5></div>
         <div className="collapsible-body" style={{background:"white"}}><span> <h3 style ={{justifyContent : "center ",textAlign:"center"}}>0 Members</h3>
-      <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
+        <Link to="/createPost">  <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
       <button className=" btn-blue"  type="submit" style={{Background:"Blue", margin:"20px",justifyContent : "center ",textAlign:"center"}}> Write a post </button>
-
+</Link>
 
        </span></div>    </li>
     <li>
@@ -47,10 +48,10 @@ const CareerCenter = () => {
         <h5 style={{color:"black"}} > Higher Education Center for Engineering</h5>
 </div>
 <div className="collapsible-body" style={{background:"white"}}><span> <h3 style ={{justifyContent : "center ",textAlign:"center"}}>0 Members</h3>
-      <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
+<Link to="/createPost">    <button className=" btn-blue"  type="submit" style={{Background:"Blue",margin:"20px",justifyContent : "center ",textAlign:"center"}}> Join In </button>
       <button className=" btn-blue"  type="submit" style={{Background:"Blue", margin:"20px",justifyContent : "center ",textAlign:"center"}}> Write a post </button>
 
-
+</Link>
        </span></div>    </li>
   </ul>
     </div>

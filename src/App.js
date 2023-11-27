@@ -11,7 +11,7 @@ import Profile from "./routes/Profile"
 import People from "./routes/People";
 import Alert from "./components/Alert";
 import CareerCenter from "./routes/CareerCenter";
-import Lookup from "./components/Lookup";
+import Lookup from "./routes/Lookup";
 
 
 export default function App() {

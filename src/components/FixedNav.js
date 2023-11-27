@@ -1,9 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React ,{useEffect} from 'react'
+import { Outlet, Link , useLocation} from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
+
 import { FiSearch } from 'react-icons/fi'; 
 import "../styles/base.css";
 
 const FixedNav = () => {
+  let navigate =useNavigate();
+
+  const handleLogout=()=>{
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+  let location = useLocation();
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location])
   return (
     <div className="navbar">
       <Link to="/">Alumni Network</Link>
@@ -12,7 +24,7 @@ const FixedNav = () => {
         <button type="submit" style={{color:'white'}} className="search-button">
           <FiSearch /> {/* Use the FiSearch icon */}
         </button></div>
-        <button className='btn-red'>Logout</button>
+        <button className='btn-red'onClick={handleLogout}>Logout</button>
       
     </div>
   );

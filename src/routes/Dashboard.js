@@ -1,13 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import FixedNav from '../components/FixedNav';
-import Profile from '../components/Profile';
+import Notes from '../components/Notes';
 const Dashboard = () => {
   return (
     <>
      <FixedNav/>
      <Navbar/> 
-     <div style={{maxWidth:"500px", margin:"0px auto" }}>
+
+     {/* <div style={{maxWidth:"500px", margin:"0px auto" }}>
      <div  style={{
       display:"flex",
       justifyContent:"space-around",
@@ -15,7 +16,8 @@ const Dashboard = () => {
 
     }}className="progress">Loading
       <div className="indeterminate">  </div>
-  </div></div>
+  </div></div> */}
+  <Notes/>
   </>
   )
 }

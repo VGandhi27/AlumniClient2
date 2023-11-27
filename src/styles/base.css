@@ -198,13 +198,13 @@ label{
     align-items: center;
 }
 
-  /* div ul li {
+  center ul li {
     display: inline-block;
     padding: 10px;
     margin: 5px 5px;
     text-align: center;
     
-} */
+}
 
 .nopage{
     margin: auto;
@@ -323,10 +323,16 @@ body {
     outline: none;
   }
   ::placeholder {
-    color: white;
-    opacity: 3; 
+    color: black;
+    opacity: 5; 
+    text-align: left;
+    font-size:x-large;
   }
   
   ::-ms-input-placeholder { 
-    color: white;
+    color: black;
+  }
+  .input{
+    font-size: large;
+
   }

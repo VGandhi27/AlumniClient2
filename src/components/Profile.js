@@ -1,6 +1,55 @@
-import React from 'react'
+import React, { useRef,useState } from "react";
+import { useContext, useEffect } from "react";
+import noteContext from "../context/notes/noteContext";
+import NoteItem from "./NoteItem";
+import M from 'materialize-css';
+import {useNavigate} from 'react-router-dom'
 
 const Profile = () => {
+  const context = useContext(noteContext);
+
+  const { notes, getmyNotes ,editNote} = context;
+  let navigate =useNavigate();
+
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      getmyNotes();
+
+    }
+    else{
+      navigate("/login");
+    }
+  }, []);
+
+  useEffect(() => {
+    const elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems, {}); // Initialize modals
+  }, []);
+  const ref = useRef(null)
+  const refClose = useRef(null)
+
+  const [note, setNote] = useState({id :"" ,etitle :"", edescription:"", etag:"default"})
+
+
+  const updateNote = (currentNote) => {
+    ref.current.click();
+
+    setNote({id:currentNote._id,etitle:currentNote.title,edescription:currentNote.description,etag:currentNote.tag})
+  };
+
+  const handleClick=(e)=>{
+    console.log("Updating the note",note)
+    editNote(note.id,note.etitle,note.edescription,note.etag);
+    refClose.current.click();
+    M.toast({html:"Updated Successfully",classes:"#43a047 green darken-1"})
+
+
+   }
+   const onChange=(e)=>{
+       setNote({...note,[e.target.name]:e.target.value })
+   }
+ 
+  
   return (
     <div>
       <div style={{maxWidth:"1000px", margin:"0px auto" }}>
@@ -32,12 +81,16 @@ const Profile = () => {
     </div>
 
     <div className='gallery'>
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80" />
-
+    <div className="row my-3">
+ <center><h1>My Posts</h1></center>
+ <div className="container">
+ {notes.length===0 &&'No Notes Available'}</div>
+ {notes.map((note) => {
+   return (
+     <NoteItem key={note._id}  showAlert={M} updateNote={updateNote} note={note} />
+   );
+ })}
+</div>
     </div>
     </div>
     </div>

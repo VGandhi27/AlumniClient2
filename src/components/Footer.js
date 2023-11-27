@@ -1,11 +1,12 @@
-import React from 'react'
-import {FaRegCopyright }from 'react-icons/fa6'
+import React from 'react';
+import {FaRegCopyright }from 'react-icons/fa6';
+import "../styles/base.css";
 const Footer = () => {
   return (
     <div className='Footer'>
       <center>
-     <ul >
-        <li >About</li> 
+     <ul  >
+        <li  >About</li> 
         <li >Blog</li>
         <li>Help</li>
         <li>Privacy</li>

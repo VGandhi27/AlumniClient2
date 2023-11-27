@@ -39,21 +39,21 @@ const CreatePost = (props) => {
 //     },[url])
   
 //    const postDetails = ()=>{
-//        const data = new FormData()
-//        data.append("file",image)
-//        data.append("upload_preset","insta_clone")
-//        data.append("cloud_name","dcyysbj41")
-//        fetch("https://api.cloudinary.com/v1_1/dcyysbj41/image/upload",{
-//            method:"post",
-//            body:data
-//        })
-//        .then(res=>res.json())
-//        .then(data=>{
-//           setUrl(data.url)
-//        })
-//        .catch(err=>{
-//            console.log(err)
-//        })
+    //    const data = new FormData()
+    //    data.append("file",image)
+    //    data.append("upload_preset","insta_clone")
+    //    data.append("cloud_name","dcyysbj41")
+    //    fetch("https://api.cloudinary.com/v1_1/dcyysbj41/image/upload",{
+    //        method:"post",
+    //        body:data
+    //    })
+    //    .then(res=>res.json())
+    //    .then(data=>{
+    //       setUrl(data.url)
+    //    })
+    //    .catch(err=>{
+    //        console.log(err)
+    //    })
 
     
 //    }
@@ -61,7 +61,8 @@ const CreatePost = (props) => {
 const context=useContext(noteContext);
 const { addNote}=context;
 
-
+const [image,setImage] = useState("")
+    const [url,setUrl] = useState("")
 const [note, setNote] = useState({title :"", description:"", tag:""})
 const handleClick=(e)=>{
  e.preventDefault();
@@ -70,6 +71,24 @@ const handleClick=(e)=>{
  M.toast({html: 'Added Successfully', classes:"#43a047 green darken-1"})
 }
 const onChange=(e)=>{
+    const data = new FormData()
+       data.append("file",image)
+       data.append("upload_preset","insta_clone")
+       data.append("cloud_name","dcyysbj41")
+       fetch("https://api.cloudinary.com/v1_1/dcyysbj41/image/upload",{
+           method:"post",
+           body:data
+       })
+       .then(res=>res.json())
+       .then(data=>{
+          setUrl(data.url)
+       })
+       .catch(err=>{
+           console.log(err)
+       })
+
+    
+
     setNote({...note,[e.target.name]:e.target.value })
 }
   return (
